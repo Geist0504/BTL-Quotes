@@ -1,0 +1,64 @@
+{
+    "quotes": [
+        {
+            "quote": "We all make choices, but in the end, our choices make us.",
+            "author": "Andrew Ryan, Bioshock",
+            "genre": "games"
+        },
+        {
+            "quote": "Love 2",
+            "author": "Author 2",
+            "genre": "love"
+        },
+        {
+            "quote": "It's in our nature to want to forget truths that keep us awake at night.",
+            "author": "Fallout: New Vegas",
+            "genre": "games"
+        },
+        {
+            "quote": "Knowledge is useless if it's not used.",
+            "author": "Gixx, Guild Wars 2",
+            "genre": "games"
+        },
+        {
+            "quote": "Love 1",
+            "author": "Author",
+            "genre": "love"
+        },
+        {
+            "quote": "War is peace. Freedom is slavery. Ignorance is strength.",
+            "author": "George Orwell, 1984",
+            "genre": "war"
+        },
+        {
+            "quote": "War is what happens when language fails.",
+            "author": "Margaret Atwood",
+            "genre": "war"
+        },
+        {
+            "quote": "I know not with what weapons World War III will be fought, but World War IV will be fought with sticks and stones.",
+            "author": "Albert Einstein",
+            "genre": "war"
+        },
+        {
+            "quote": "Love means never having to say you're sorry.",
+            "author": "Love Story, 1970",
+            "genre": "movies"
+        },
+        {
+            "quote": "They may take our lives, but they'll never take our freedom!",
+            "author": "Braveheart, 1995",
+            "genre": "movies"
+        },
+        {
+            "quote": "Chewie, we're home.",
+            "author": "Star Wars Episode VII: The Force Awakens, 2015",
+            "genre": "movies"
+        },
+        {
+            "quote": "It was Beauty killed the Beast.",
+            "author": "King Kong, 1933",
+            "genre": "movies"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+/*Background for each box */
+#love { background-image: url("../images/boxes/love.jpg"); background-color: #cc0000; }
+#war { background-image: url("../images/boxes/war.jpg"); background-color: #800000; }
+#games { background-image: url("../images/boxes/games.jpg"); background-color: #006600; }
+#movies { background-image: url("../images/boxes/movies.jpg"); background-color: #336600; }
+
+
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-size: cover;
+    
+    width: calc(25% - 10px);
+    height:300px;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    
+}
+
+.box:hover {
+    opacity: .5;
+    cursor: pointer;
+}
