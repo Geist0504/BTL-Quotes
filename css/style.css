@@ -59,6 +59,7 @@ table {
 body{
     background-color: grey;
     height: 4000px;
+    color: white;
 }
 
 .container {
@@ -125,6 +126,67 @@ body{
 */
 
 
-.topic{
+.topic {
     padding-top: 50px;
+}
+
+
+/*
+  ========================================
+  Section
+  ========================================
+*/
+
+section {
+    flex-direction: column;
+    align-items: center;
+}
+
+.quoteArea {
+    height: 300px;
+    width: 700px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-shadow: 0 5px 10px black;
+    position: relative;
+}
+
+section h1 {
+    margin: 50px auto;
+    font-size: 30px;
+    text-shadow: 0 2px 7px black;
+}
+
+.quoteArea h2 {
+    font-size: 25px;
+    margin-top:20px;
+}
+
+.quoteArea h4 {
+    position: absolute;
+    font-size: 20px;
+    flex: 1;
+    align-self: flex-end;
+    bottom: 30px;
+    right: 20px;
+}
+
+
+/*
+  ========================================
+  Random Quote Section
+  ========================================
+*/
+
+#random {
+    height: 100vh;
+    padding-top: 50px;
+    background-color: #0a7e4e;
+}
+
+#random .quoteArea {
+    background-color: #53dda4;
 }
