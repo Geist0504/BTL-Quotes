@@ -5,39 +5,30 @@
 
 */  
 
-//On document.ready ..
+
 $(document).ready(function() {
+    $(".randomQuote").click(function() {
+        randomQuote();
+    });
+});
 
-//Listen for click on boxes (genre)
-$(".box").click(function() {
-    //Get ID (genre) of the box)
-    var callID = this.id;
-    var quotes = [];
+var randomQuote = function() {
+    var randomQuotes = [];
     
-    // Get json data
     $.getJSON("js/quotes.json", function(data) {
-        //For each quote..
+        //Push every quote in array
         $(data.quotes).each(function(index, value) {
-            // If genres match...
-            if (callID == value.genre) {
-                // Push quote into array
-                quotes.push(value);
-            } 
-        }); // FOREACH END
-        // Randomize the array
-        var ran = Math.floor(Math.random()*quotes.length);
-        // Display quote if exist
-        if(quotes.length > 0) {
-            // console.clear is not needed, but makes debugging easier
-            console.clear();
-            console.log("Quote: " + quotes[ran].quote);
-            console.log("Author: " + quotes[ran].author);
-        // Or give error message for missing quotes (callID = genre)
-        } else {
-            console.log("No quotes matching this genre: " + callID);
-        }
-    }); // End of json
-    
-}); // end of .box click
+            randomQuotes.push(value);
+        });
+        
+        //Get random quote
+        var ran = Math.floor(Math.random()*randomQuotes.length);
+        
+        //Replace HTML with quotes
+        $("#random > .quoteArea > h2").html('"' + randomQuotes[ran].quote + '"');
+        $("#random > .quoteArea > h4").html('- ' + randomQuotes[ran].author);
+        
+    });
+}
 
-}); // End of document.ready
+randomQuote();
