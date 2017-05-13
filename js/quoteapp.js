@@ -5,14 +5,20 @@
 
 */  
 
+var randomQuote = "";
+var randomAuthor = "";
+
 
 $(document).ready(function() {
     $(".randomQuote").click(function() {
-        randomQuote();
+        randomQuoteFetch();
+    });
+    $("#random .tweet").click(function() {
+        tweetRandom();
     });
 });
 
-var randomQuote = function() {
+var randomQuoteFetch = function() {
     var randomQuotes = [];
     
     $.getJSON("js/quotes.json", function(data) {
@@ -25,10 +31,17 @@ var randomQuote = function() {
         var ran = Math.floor(Math.random()*randomQuotes.length);
         
         //Replace HTML with quotes
-        $("#random > .quoteArea > h2").html('"' + randomQuotes[ran].quote + '"');
-        $("#random > .quoteArea > h4").html('- ' + randomQuotes[ran].author);
+        randomQuote = '"' + randomQuotes[ran].quote + '"';
+        randomAuthor = '- ' + randomQuotes[ran].author;
+        
+        $("#random > .quoteArea > h2").html(randomQuote);
+        $("#random > .quoteArea > h4").html(randomAuthor);
         
     });
 }
 
-randomQuote();
+randomQuoteFetch();
+
+var tweetRandom = function() {
+    window.open("https:www.twitter.com/intent/tweet?text=" + randomQuote + "    " + randomAuthor);
+}
