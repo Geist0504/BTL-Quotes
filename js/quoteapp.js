@@ -5,6 +5,7 @@
 
 */  
 
+// Length of fade effect
 var fadeDelay = 400;
 
 var randomQuote = "";
@@ -14,10 +15,7 @@ var randomAuthor = "";
 $(document).ready(function() {
     
     $(".randomQuote").click(function() {
-        /*$("#random > .quoteArea > h2").css("opacity", "0");
-            setTimeout(function(){
-                randomQuoteFetch();
-            }, 1000);*/
+        //Fadeout on click
         $("#random > .quoteArea > h2, #random > .quoteArea > h4").fadeOut(fadeDelay);
         setTimeout(function() {
             randomQuoteFetch();
@@ -25,7 +23,6 @@ $(document).ready(function() {
         
         
     });
-    
     
     $("#random .tweet").click(function() {
         tweetRandom();
@@ -48,15 +45,17 @@ var randomQuoteFetch = function() {
         randomQuote = '"' + randomQuotes[ran].quote + '"';
         randomAuthor = '- ' + randomQuotes[ran].author;
         
-        
+        //Change HTML with fade effect
         $("#random > .quoteArea > h2").html(randomQuote).fadeIn(fadeDelay);
         $("#random > .quoteArea > h4").html(randomAuthor).fadeIn(fadeDelay);
         
     });
 }
 
+//Call random quote function on page ready
 randomQuoteFetch();
 
+//Tweet function
 var tweetRandom = function() {
     window.open("https:www.twitter.com/intent/tweet?text=" + randomQuote + "    " + randomAuthor);
 }
