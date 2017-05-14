@@ -203,11 +203,28 @@ section h1 {
 }
 
 button {
-    transition: all ease 0.4s;
+    transition: all ease 0.1s;
 }
 
 button:hover {
     box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+.buttons button:focus {
+    outline:none;
+}
+
+.buttons button:active {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    transform: scale(0.99);
+}
+
+.buttons >:first-child:active {
+    background-color: #08910f;  
+}
+
+.buttons >:nth-child(2):active {
+    background-color: #0077ff;
 }
 
 /*
