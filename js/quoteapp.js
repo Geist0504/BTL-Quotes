@@ -5,14 +5,28 @@
 
 */  
 
+var fadeDelay = 400;
+
 var randomQuote = "";
 var randomAuthor = "";
 
 
 $(document).ready(function() {
+    
     $(".randomQuote").click(function() {
-        randomQuoteFetch();
+        /*$("#random > .quoteArea > h2").css("opacity", "0");
+            setTimeout(function(){
+                randomQuoteFetch();
+            }, 1000);*/
+        $("#random > .quoteArea > h2, #random > .quoteArea > h4").fadeOut(fadeDelay);
+        setTimeout(function() {
+            randomQuoteFetch();
+        }, fadeDelay);
+        
+        
     });
+    
+    
     $("#random .tweet").click(function() {
         tweetRandom();
     });
@@ -34,8 +48,9 @@ var randomQuoteFetch = function() {
         randomQuote = '"' + randomQuotes[ran].quote + '"';
         randomAuthor = '- ' + randomQuotes[ran].author;
         
-        $("#random > .quoteArea > h2").html(randomQuote);
-        $("#random > .quoteArea > h4").html(randomAuthor);
+        
+        $("#random > .quoteArea > h2").html(randomQuote).fadeIn(fadeDelay);
+        $("#random > .quoteArea > h4").html(randomAuthor).fadeIn(fadeDelay);
         
     });
 }
