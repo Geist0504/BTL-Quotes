@@ -12,8 +12,9 @@ var randomQuote = "";
 var randomAuthor = "";
 
 
-$(document).ready(function() {
-    
+
+$(document).ready(function() {    
+    //Random click function
     $(".randomQuote").click(function() {
         //Fadeout on click
         $("#random > .quoteArea > h2, #random > .quoteArea > h4").fadeOut(fadeDelay);
@@ -27,6 +28,26 @@ $(document).ready(function() {
     $("#random .tweet").click(function() {
         tweetRandom();
     });
+
+    $(".box").click(function(){
+        var topic = this.id;
+        console.log(topic);
+    });
+
+    $("#myBtn").click(function(){
+        $('.modal').css('display', 'block');
+        console.log("open");
+    });
+    $(".close").click(function(){
+        $('.modal').css('display', 'none');
+        console.log("close");
+    });
+    $("window").click(function(event){
+        if (event.target == modal) {
+            $('.modal').css('display', 'none');
+        }
+    });
+
 });
 
 var randomQuoteFetch = function() {
