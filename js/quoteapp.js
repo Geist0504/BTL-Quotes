@@ -1,20 +1,23 @@
 /* 
     
     Main JS file - Displays random quote based on what you click (random game quote, random movie quote..)
-    The program currently only displays to console for debugging purposes
 
 */  
 
-// Length of fade effect
-var fadeDelay = 400;
+//json api
+var api = "https://api.myjson.com/bins/oaorl";
 
-var randomQuote = "";
-var randomAuthor = "";
+// Length of fade effect
+var fadeDelay = 300;
+
+
 
 
 
 $(document).ready(function() {    
-    //Random click function
+    // Click functions
+    
+    //Random quote click function
     $(".randomQuote").click(function() {
         //Fadeout on click
         $("#random > .quoteArea > h2, #random > .quoteArea > h4").fadeOut(fadeDelay);
@@ -51,26 +54,43 @@ $(document).ready(function() {
 });
 
 var randomQuoteFetch = function() {
+    
+    var randomQuote = "";
+    var randomAuthor = "";
     var randomQuotes = [];
     
-    $.getJSON("js/quotes.json", function(data) {
-        //Push every quote in array
-        $(data.quotes).each(function(index, value) {
+    // Fetch json
+    $.ajax({
+        type: 'GET',
+        url: api,
+        dataType: 'json',
+        success: function(data) {
+            
+            //for each quote item in json..
+            $(data.quotes).each(function(index, value) {
+            //push item into array
             randomQuotes.push(value);
+                
         });
         
-        //Get random quote
+            
+        //Get random number from quotes.length
         var ran = Math.floor(Math.random()*randomQuotes.length);
         
-        //Replace HTML with quotes
+        //Replace HTML with random quote + author
         randomQuote = '"' + randomQuotes[ran].quote + '"';
         randomAuthor = '- ' + randomQuotes[ran].author;
         
         //Change HTML with fade effect
         $("#random > .quoteArea > h2").html(randomQuote).fadeIn(fadeDelay);
         $("#random > .quoteArea > h4").html(randomAuthor).fadeIn(fadeDelay);
-        
-    });
+            
+        },
+        //In case of error with json api..
+        error: function() {
+        alert("The JSON file was not found.");
+    } 
+    })
 }
 
 //Call random quote function on page ready
