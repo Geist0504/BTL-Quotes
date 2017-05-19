@@ -1,0 +1,59 @@
+[33mcommit 6b533b045d087cce3c736c1e450ba31885a91260[m
+Author: Soreg <S_Gravesen92@hotmail.com>
+Date:   Fri May 12 20:08:54 2017 +0200
+
+    added functionality for random quotes
+
+[33mcommit 918fb8e939b874645437eb31edcab38fee85a05f[m
+Author: Soreg <S_Gravesen92@hotmail.com>
+Date:   Fri May 12 20:08:13 2017 +0200
+
+    changed css
+
+[33mcommit fdfa0d52bc546c80ec607391100d4ce9f5e1c860[m
+Author: Soreg <S_Gravesen92@hotmail.com>
+Date:   Fri May 12 20:05:54 2017 +0200
+
+    modified to work with js
+
+[33mcommit 60f5440ec72e72aed4e4c5754e9dd42aad20cece[m
+Author: Soreg <S_Gravesen92@hotmail.com>
+Date:   Fri May 12 19:12:40 2017 +0200
+
+    added buttons in html + css
+
+[33mcommit 6aeb5954161d5cdc5b76815edb16748c1a9db1ca[m
+Author: Soreg <S_Gravesen92@hotmail.com>
+Date:   Thu May 11 21:24:15 2017 +0200
+
+    Added Random Quote section and styles
+
+[33mcommit dc12331f44b059fce9812dd0c5a3d62d4734f8be[m
+Author: Andrew Gallin <andrewgallin@Macintosh.home>
+Date:   Mon May 8 22:24:01 2017 -0400
+
+    added element padding for first section
+
+[33mcommit 38ea9bf66535fa468f483ab64963510016783b88[m
+Author: Andrew Gallin <andrewgallin@Macintosh.home>
+Date:   Mon May 8 22:18:10 2017 -0400
+
+    fixed navbar to top
+
+[33mcommit 1c3553ca8acbc67fabde642508ae36e2257b7dbd[m
+Author: Andrew Gallin <andrewgallin@Macintosh.home>
+Date:   Mon May 8 22:12:15 2017 -0400
+
+    Removed default stylings, added placeholder nav bar and background
+
+[33mcommit 60fe492d1a82772bda62209e441a189c006501f7[m
+Author: Soreg <S_Gravesen92@hotmail.com>
+Date:   Sun May 7 12:14:43 2017 +0200
+
+    added currently working files (Start of project)
+
+[33mcommit 2886cc0fd1e0cbebc78c15e2c96952528cf747da[m
+Author: Geist0504 <Amg877@aol.com>
+Date:   Sat May 6 21:44:29 2017 -0400
+
+    Initial commit
