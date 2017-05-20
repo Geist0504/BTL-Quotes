@@ -7,11 +7,10 @@
 //json api
 var api = "https://api.myjson.com/bins/oaorl";
 
+var topicAPI = "http://quotes.rest/qod.json?category="
+
 // Length of fade effect
 var fadeDelay = 300;
-
-
-
 
 
 $(document).ready(function() {    
@@ -35,6 +34,8 @@ $(document).ready(function() {
     $(".box").click(function(){
         var topic = this.id;
         console.log(topic);
+        topicQuote(topic);
+        $('.modal').css('display', 'block');
     });
 
     $("#myBtn").click(function(){
@@ -92,6 +93,30 @@ var randomQuoteFetch = function() {
     } 
     })
 }
+
+//Function takes sting of topic from button identifier, 
+//gets a quote from API and passes quote message into modal body
+var topicQuote = function(topic){
+
+    var topic = topic;
+    //Create Promise
+    var promiseTest = function(topic){
+        return $.ajax({
+            url: 'http://quotes.rest/qod.json?category=' + topic,
+            dataType: 'json',
+            type: 'GET'
+        });
+    }
+    var promise = promiseTest(topic);
+
+    promise.done(function(data){
+        var quote = data.contents['quotes'][0]['quote'];
+        console.log(quote);
+        $('.modal-content p').text(quote);
+    });
+
+}
+
 
 //Call random quote function on page ready
 randomQuoteFetch();

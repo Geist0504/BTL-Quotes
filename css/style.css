@@ -51,6 +51,10 @@ table {
 
 /*Background for each box */
 #love { background-image: url("../images/boxes/love.jpg"); background-color: #cc0000; }
+#management { background-image: url("../images/boxes/war.jpg"); background-color: #800000; }
+#games { background-image: url("../images/boxes/games.jpg"); background-color: #006600; }
+#movies { background-image: url("../images/boxes/movies.jpg"); background-color: #336600; }
+#love { background-image: url("../images/boxes/love.jpg"); background-color: #cc0000; }
 #war { background-image: url("../images/boxes/war.jpg"); background-color: #800000; }
 #games { background-image: url("../images/boxes/games.jpg"); background-color: #006600; }
 #movies { background-image: url("../images/boxes/movies.jpg"); background-color: #336600; }
@@ -58,7 +62,6 @@ table {
 
 body{
     background-color: grey;
-    height: 4000px;
     color: white;
 }
 
@@ -83,6 +86,16 @@ body{
 .box:hover {
     opacity: .5;
     cursor: pointer;
+}
+
+/*
+  ========================================
+  Content
+  ========================================
+*/
+
+.content{
+
 }
 
 
@@ -193,7 +206,7 @@ section h1 {
 }
 
 .buttons button {
-    width: 300px;
+    width: 200px;
     height: 60px;
     font-size: 20px;
     margin-top: 50px;
@@ -256,7 +269,6 @@ button:hover {
   ========================================
 */
 
-
 .modal{
   display: none; /* starts hidden */
   position: fixed; /* won't move */
@@ -272,11 +284,12 @@ button:hover {
 
 
 .modal-content{
-  background-color: #fefefe;
+  background-color: black;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  border-radius: 10px;
+  width: 40%;
 }
 
 /* The Close Button */
