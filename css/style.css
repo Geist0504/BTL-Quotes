@@ -51,13 +51,13 @@ table {
 
 /*Background for each box */
 #love { background-image: url("../images/boxes/love.jpg"); background-color: #cc0000; }
-#management { background-image: url("../images/boxes/war.jpg"); background-color: #800000; }
-#games { background-image: url("../images/boxes/games.jpg"); background-color: #006600; }
-#movies { background-image: url("../images/boxes/movies.jpg"); background-color: #336600; }
-#love { background-image: url("../images/boxes/love.jpg"); background-color: #cc0000; }
-#war { background-image: url("../images/boxes/war.jpg"); background-color: #800000; }
-#games { background-image: url("../images/boxes/games.jpg"); background-color: #006600; }
-#movies { background-image: url("../images/boxes/movies.jpg"); background-color: #336600; }
+#management { background-image: url("../images/boxes/management.jpg"); background-color: #800000; }
+#sports { background-image: url("../images/boxes/sports.jpg"); background-color: #006600; }
+#life { background-image: url("../images/boxes/life.jpg"); background-color: #336600; }
+#funny { background-image: url("../images/boxes/funny.jpg"); background-color: #cc0000; }
+#art { background-image: url("../images/boxes/art.jpg"); background-color: #800000; }
+#inspire { background-image: url("../images/boxes/inspire.jpg"); background-color: #006600; }
+#students { background-image: url("../images/boxes/students.jpg"); background-color: #336600; }
 
 
 body{
@@ -74,13 +74,13 @@ body{
 
 .box {
     background-size: cover;
-    width: calc(25% - 10px);
+    width: 40%;
     height:300px;
     margin: 10px;
     text-align: center;
-    color: white;
+    color: black;
     justify-content: center;
-
+    border-radius: 3%;
 }
 
 .box:hover {
@@ -95,7 +95,7 @@ body{
 */
 
 .content{
-
+  border 40px solid black;
 }
 
 
@@ -282,6 +282,10 @@ button:hover {
   background-color: rgba(0,0,0,0.8); /* Black with opacity */
 }
 
+.author{
+  text-align: right;
+}
+
 
 .modal-content{
   background-color: black;
@@ -302,7 +306,7 @@ button:hover {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: grey;
     text-decoration: none;
     cursor: pointer;
 }

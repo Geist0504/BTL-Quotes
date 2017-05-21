@@ -1,17 +1,13 @@
 /* 
-    
     Main JS file - Displays random quote based on what you click (random game quote, random movie quote..)
-
 */  
 
 //json api
 var api = "https://api.myjson.com/bins/oaorl";
-
 var topicAPI = "http://quotes.rest/qod.json?category="
 
 // Length of fade effect
 var fadeDelay = 300;
-
 
 $(document).ready(function() {    
     // Click functions
@@ -23,8 +19,6 @@ $(document).ready(function() {
         setTimeout(function() {
             randomQuoteFetch();
         }, fadeDelay);
-        
-        
     });
     
     $("#random .tweet").click(function() {
@@ -33,25 +27,21 @@ $(document).ready(function() {
 
     $(".box").click(function(){
         var topic = this.id;
-        console.log(topic);
         topicQuote(topic);
         $('.modal').css('display', 'block');
     });
 
     $("#myBtn").click(function(){
         $('.modal').css('display', 'block');
-        console.log("open");
     });
     $(".close").click(function(){
         $('.modal').css('display', 'none');
-        console.log("close");
     });
     $("window").click(function(event){
-        if (event.target == modal) {
+        if (event.target != modal) {
             $('.modal').css('display', 'none');
         }
     });
-
 });
 
 var randomQuoteFetch = function() {
@@ -96,27 +86,28 @@ var randomQuoteFetch = function() {
 
 //Function takes sting of topic from button identifier, 
 //gets a quote from API and passes quote message into modal body
-var topicQuote = function(topic){
+function topicQuote(topic){
 
     var topic = topic;
     //Create Promise
-    var promiseTest = function(topic){
-        return $.ajax({
-            url: 'http://quotes.rest/qod.json?category=' + topic,
-            dataType: 'json',
-            type: 'GET'
-        });
-    }
     var promise = promiseTest(topic);
 
-    promise.done(function(data){
-        var quote = data.contents['quotes'][0]['quote'];
-        console.log(quote);
+    promise.done(function(obj){
+        var quote = obj.contents['quotes'][0]['quote'];
+        var author = obj.contents['quotes'][0]['author'];
         $('.modal-content p').text(quote);
+        $('.modal-content .author').text('-'+author);
     });
 
 }
-
+//fucntion gets JSON from quote API
+function promiseTest(topic){
+    return $.ajax({
+        url: 'http://quotes.rest/qod.json?category=' + topic,
+        dataType: 'json',
+        type: 'GET'
+    });
+}
 
 //Call random quote function on page ready
 randomQuoteFetch();
