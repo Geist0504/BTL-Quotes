@@ -5,15 +5,16 @@
     <title>Quote App</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/quoteapp.js" type="text/javascript"></script>
+    <script src="js/animatescroll.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/quoteapp.js" type="text/javascript"></script>
 </head>
 <body>
     <header>
     <nav class="nav">
                 <ul>
-                    <li><a href="#random">Any Quote</a></li><!--
-                    --><li><a href="#topicQuote">Topic</a></li><!--
+                    <li id="navRandom"><a href="#random">Any Quote</a></li><!--
+                    --><li id="navTopic"><a href="#topic">Topic</a></li><!--
                     --><li><a href="#about">About</a></li>
                 </ul>
             </nav>
@@ -35,7 +36,7 @@
         </div>
     </section>
 
-    <section class="container topic">
+    <section id="topic" class="container topic">
        
         <div class="box" id="love" data-genre="love">Love</div>
         <div class="box" id="management" data-genre="management">Management</div>

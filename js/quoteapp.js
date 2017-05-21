@@ -12,6 +12,19 @@ var fadeDelay = 300;
 $(document).ready(function() {    
     // Click functions
     
+    // AnimateScroll //
+    
+    $("#navRandom").click(function() {
+        $("#random").animatescroll({padding:45});
+    });
+    
+    $("#navTopic").click(function() {
+        $("#topic").animatescroll({padding:45});
+    });
+    
+    
+    // Quotes //
+    
     //Random quote click function
     $(".randomQuote").click(function() {
         //Fadeout on click
