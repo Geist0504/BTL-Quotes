@@ -93,6 +93,7 @@ var randomQuoteFetch = function() {
 
         $("#topicQuote > .modal-content > p").html(randomQuote).fadeIn(fadeDelay);
         $("#topicQuote > .modal-content > .author").html(randomAuthor).fadeIn(fadeDelay);
+        $("#topicQuote > .modal-content > h3").text('Random').fadeIn(fadeDelay);
             
         },
         //In case of error with json api..
@@ -114,6 +115,7 @@ function topicQuote(topic){
         var quote = obj.contents['quotes'][0]['quote'];
         var author = obj.contents['quotes'][0]['author'];
         $('.modal-content p').text(quote);
+        $('.modal-content h3').text(toTitleCase(topic));
         $('.modal-content .author').text('-'+author);
     });
 
@@ -124,6 +126,13 @@ function promiseTest(topic){
         url: 'http://quotes.rest/qod.json?category=' + topic,
         dataType: 'json',
         type: 'GET'
+    });
+}
+
+function toTitleCase(str)
+{
+    return str.replace(/\w\S*/g, function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
 }
 

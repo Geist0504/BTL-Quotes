@@ -279,6 +279,7 @@ button:hover {
   background-color: rgba(0,0,0,0.8); /* Black with opacity */
 }
 
+
 .author{
   text-align: right;
 }
@@ -293,8 +294,17 @@ button:hover {
   width: 40%;
   min-height: 100px;
   box-shadow: 0 5px 10px black;
-  font-size: 22px;
+  font-size: 20px;
 }
+
+.modal-content h3{
+  text-align: center;
+  font-size: 30px;
+  padding-bottom:10px;
+  color: gray;
+  padding-bottom: 20px;
+}
+
 .modal-content .randomQuote{
   position: absolute;
   left:0;
