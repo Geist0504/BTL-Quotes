@@ -32,6 +32,11 @@ $(document).ready(function() {
         setTimeout(function() {
             randomQuoteFetch();
         }, fadeDelay);
+
+        $("#topicQuote > .modal-content > p, #topicQuote > .modal-content > .author").fadeOut(fadeDelay);
+        setTimeout(function() {
+            randomQuoteFetch();
+        }, fadeDelay);
     });
     
     $("#random .tweet").click(function() {
@@ -41,14 +46,11 @@ $(document).ready(function() {
     $(".box").click(function(){
         var topic = this.id;
         topicQuote(topic);
-        $('.modal').css('display', 'block');
+        $('.modal').fadeIn(1500);
     });
 
-    $("#myBtn").click(function(){
-        $('.modal').css('display', 'block');
-    });
     $(".close").click(function(){
-        $('.modal').css('display', 'none');
+        $('.modal').fadeOut(1000);
     });
     $("window").click(function(event){
         if (event.target != modal) {
@@ -88,6 +90,9 @@ var randomQuoteFetch = function() {
         //Change HTML with fade effect
         $("#random > .quoteArea > h2").html(randomQuote).fadeIn(fadeDelay);
         $("#random > .quoteArea > h4").html(randomAuthor).fadeIn(fadeDelay);
+
+        $("#topicQuote > .modal-content > p").html(randomQuote).fadeIn(fadeDelay);
+        $("#topicQuote > .modal-content > .author").html(randomAuthor).fadeIn(fadeDelay);
             
         },
         //In case of error with json api..
