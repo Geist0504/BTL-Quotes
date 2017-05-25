@@ -10,6 +10,9 @@ var topicAPI = "http://quotes.rest/qod.json?category="
 var fadeDelay = 300;
 
 $(document).ready(function() {    
+    //Wow.js activation //
+    
+    new WOW().init();
     
     // ANIMATESCROLL //
     
