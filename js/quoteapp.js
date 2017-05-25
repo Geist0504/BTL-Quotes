@@ -10,9 +10,8 @@ var topicAPI = "http://quotes.rest/qod.json?category="
 var fadeDelay = 300;
 
 $(document).ready(function() {    
-    // Click functions
     
-    // AnimateScroll //
+    // ANIMATESCROLL //
     
     $("#navRandom").click(function() {
         $("#random").animatescroll({padding:45});
@@ -22,28 +21,29 @@ $(document).ready(function() {
         $("#topic").animatescroll({padding:45});
     });
     
+    // ON CLICK //
     
-    // Quotes //
+    $("#random .tweet").click(function() {
+        tweetRandom();
+    });
     
-    //Random quote click function
     $(".randomQuote").click(function() {
-        //Fadeout on click
-        $("#random > .quoteArea > h2, #random > .quoteArea > h4").fadeOut(fadeDelay);
-        setTimeout(function() {
-            randomQuoteFetch();
-        }, fadeDelay);
 
+        // Fadeout on click
+        $(".randomQuoteArea > h4").fadeOut(fadeDelay);
+        $(".randomQuoteArea > h2").fadeOut(fadeDelay);
+        // Set timeout for function to run
+        setTimeout(function() {
+            //randomQuoteFetch();
+        }, fadeDelay);
+        
         $("#topicQuote > .modal-content > p, #topicQuote > .modal-content > .author").fadeOut(fadeDelay);
         setTimeout(function() {
             randomQuoteFetch();
         }, fadeDelay);
     });
-    
-    $("#random .tweet").click(function() {
-        tweetRandom();
-    });
 
-    $(".box").click(function(){
+  $(".box").click(function(){
         var topic = this.id;
         topicQuote(topic);
         $('.modal').fadeIn(1500);
@@ -52,12 +52,19 @@ $(document).ready(function() {
     $(".close").click(function(){
         $('.modal').fadeOut(1000);
     });
+    
     $("window").click(function(event){
         if (event.target != modal) {
             $('.modal').css('display', 'none');
         }
     });
+
+    
+
 });
+
+
+// FUNCTIONS //
 
 var randomQuoteFetch = function() {
     
@@ -88,19 +95,27 @@ var randomQuoteFetch = function() {
         randomAuthor = '- ' + randomQuotes[ran].author;
         
         //Change HTML with fade effect
-        $("#random > .quoteArea > h2").html(randomQuote).fadeIn(fadeDelay);
-        $("#random > .quoteArea > h4").html(randomAuthor).fadeIn(fadeDelay);
+        $(".randomQuoteArea > h2").html(randomQuote).fadeIn(fadeDelay);
+        $(".randomQuoteArea > h4").html(randomAuthor).fadeIn(fadeDelay);
 
-        $("#topicQuote > .modal-content > p").html(randomQuote).fadeIn(fadeDelay);
-        $("#topicQuote > .modal-content > .author").html(randomAuthor).fadeIn(fadeDelay);
-        $("#topicQuote > .modal-content > h3").text('Random').fadeIn(fadeDelay);
+        $(".modal-content > p").html(randomQuote).fadeIn(fadeDelay);
+        $(".modal-content > .author").html(randomAuthor).fadeIn(fadeDelay);
+        $(".modal-content > h3").text('Random').fadeIn(fadeDelay);
             
         },
         //In case of error with json api..
         error: function() {
         alert("The JSON file was not found.");
     } 
-    })
+    });
+}
+
+//Call random quote function on page ready
+randomQuoteFetch();
+
+//Tweet function
+var tweetRandom = function() {
+    window.open("https:www.twitter.com/intent/tweet?text=" + randomQuote + "    " + randomAuthor);
 }
 
 //Function takes sting of topic from button identifier, 
@@ -134,12 +149,4 @@ function toTitleCase(str)
     return str.replace(/\w\S*/g, function(txt){
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
-}
-
-//Call random quote function on page ready
-randomQuoteFetch();
-
-//Tweet function
-var tweetRandom = function() {
-    window.open("https:www.twitter.com/intent/tweet?text=" + randomQuote + "    " + randomAuthor);
 }
