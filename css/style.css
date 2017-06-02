@@ -65,6 +65,10 @@ body{
     color: white;
 }
 
+h1{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .box {
     margin: 10px auto;
     background-size: cover;
@@ -78,13 +82,6 @@ body{
     opacity: .5;
     cursor: pointer;
 }
-
-/*
-  ========================================
-  Content
-  ========================================
-*/
-
 
 
 /*
@@ -172,6 +169,7 @@ section h1 {
     height: 100vh;
     padding-top: 50px;
     background-color: #0a7e4e;
+    padding-bottom: 10%;
 }
 
 #random .randomQuoteArea {
@@ -278,3 +276,32 @@ section h1 {
     text-decoration: none;
     cursor: pointer;
 }
+
+/*
+  ========================================
+  Footer
+  ========================================
+*/
+
+
+.footer{
+  width: 100%;
+  min-height: 100px;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+  background-color: #0a7e4e;
+  position: relative;
+  text-align: center;
+  line-height: 100%;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.footer p{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+

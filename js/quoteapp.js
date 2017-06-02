@@ -8,6 +8,7 @@ var topicAPI = "http://quotes.rest/qod.json?category="
 
 // Length of fade effect
 var fadeDelay = 300;
+var modalDelay = 2000;
 
 $(document).ready(function() {    
     //Wow.js activation //
@@ -49,11 +50,11 @@ $(document).ready(function() {
   $(".box").click(function(){
         var topic = this.id;
         topicQuote(topic);
-        $('.modal').fadeIn(1500);
+        $('.modal').fadeIn(modalDelay);
     });
 
     $(".close").click(function(){
-        $('.modal').fadeOut(1000);
+        $('.modal').fadeOut(500);
     });
     
     $("window").click(function(event){
@@ -101,9 +102,9 @@ var randomQuoteFetch = function() {
         $(".randomQuoteArea > h2").html(randomQuote).fadeIn(fadeDelay);
         $(".randomQuoteArea > h4").html(randomAuthor).fadeIn(fadeDelay);
 
-        $(".modal-content > p").html(randomQuote).fadeIn(fadeDelay);
-        $(".modal-content > .author").html(randomAuthor).fadeIn(fadeDelay);
-        $(".modal-content > h3").text('Random').fadeIn(fadeDelay);
+        $(".modal-content > p").html(randomQuote).fadeIn(modalDelay);
+        $(".modal-content > .author").html(randomAuthor).fadeIn(modalDelay);
+        $(".modal-content > h3").text('Random').fadeIn(modalDelay);
             
         },
         //In case of error with json api..
@@ -132,9 +133,9 @@ function topicQuote(topic){
     promise.done(function(obj){
         var quote = obj.contents['quotes'][0]['quote'];
         var author = obj.contents['quotes'][0]['author'];
-        $('.modal-content p').text(quote);
-        $('.modal-content h3').text(toTitleCase(topic));
-        $('.modal-content .author').text('-'+author);
+        $('.modal-content p').text(quote).fadeIn(modalDelay);
+        $('.modal-content h3').text(toTitleCase(topic)).fadeIn(modalDelay);
+        $('.modal-content .author').text('-'+author).fadeIn(modalDelay);
     });
 
 }
